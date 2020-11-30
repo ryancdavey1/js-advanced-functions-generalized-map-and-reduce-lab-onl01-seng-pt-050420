@@ -16,13 +16,12 @@ function map(arr, func) {
 //   return total
 // }
 
-function reduce(src, cb, starting){
-  let r = (!!starting) ? starting : src[0]
+function reduce(arr, func, starting){
+  let r = (!!starting) ? starting : arr[0]
   let i = (!!starting) ? 0 : 1
 
-  for (; i < src.length; i++) {
-    r = cb(src[i], r)
+  for (; i < arr.length; i++) {
+    r = func(arr[i], r)
   }
-
   return r;
 }
